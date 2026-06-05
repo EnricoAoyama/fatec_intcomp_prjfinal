@@ -37,8 +37,7 @@ O dataset atende aos requisitos da atividade pois possui:
 
 A forma mais simples de executar o projeto é pelo Google Colab, sem necessidade de instalação local.
 
-Acesse o notebook pelo link abaixo:
-[Visualizar e executar no Google Colab](https://colab.research.google.com/drive/14RkxwwBu62DeCD9EUThGfCWsb0n7SytA?usp=sharing)
+Acesse o notebook pelo [link](https://colab.research.google.com/drive/14RkxwwBu62DeCD9EUThGfCWsb0n7SytA?usp=sharing).
 
 Após abrir o notebook:
 
