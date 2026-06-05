@@ -3,13 +3,11 @@
 
 Este repositório contém o desenvolvimento da atividade avaliativa final da disciplina de **Inteligência Computacional**, utilizando o dataset **Global Power Plant Database**, disponível no Kaggle.
 
-## Problema escolhido
+## Problema escolhido - Regressão Supervisionada
 
-O problema escolhido foi de **regressão supervisionada**.
+Com o crescimento acelerado da Inteligência Artificial, aumenta também a demanda por infraestrutura computacional capaz de processar grandes volumes de dados, treinar modelos e manter serviços digitais em funcionamento contínuo. Essa expansão impulsiona a instalação de novos data centers, estruturas que dependem de grande disponibilidade de energia elétrica para operar de forma estável e segura. Nesse contexto, regiões com maior capacidade instalada de geração tendem a se tornar mais relevantes para análises de planejamento energético e expansão da infraestrutura digital. Assim, este trabalho trata de um problema de regressão supervisionada cujo objetivo é prever a capacidade instalada das usinas elétricas, representada pela variável `capacity_mw`, a partir de características como localização geográfica, país, fonte primária de energia e ano de comissionamento. A previsão dessa capacidade permite compreender melhor os fatores associados ao porte das usinas e contribui para análises sobre a oferta de energia em um cenário de crescente demanda tecnológica.
 
-O objetivo é prever a capacidade instalada de uma usina elétrica, em megawatts (`capacity_mw`), com base em atributos como país, localização geográfica, fonte primária de energia, proprietário, ano de comissionamento e demais informações disponíveis no dataset.
-
-## 2. Dataset
+## Dataset
 Link do dataset: <https://www.kaggle.com/datasets/ranafayezz/global-power-plant>
 
 O dataset contém informações globais sobre usinas elétricas, incluindo:
