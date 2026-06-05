@@ -159,7 +159,7 @@ pip install -r requirements.txt
 2. Abra o notebook:
 
 ```bash
-jupyter notebook IntComp_Atividade_Final_Global_Power_Plants.ipynb
+jupyter notebook IntComp_Atividade_Final_Global_Power_Plant.ipynb
 ```
 
 3. Execute as células em ordem.
