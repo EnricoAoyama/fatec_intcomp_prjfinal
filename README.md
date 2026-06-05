@@ -148,18 +148,48 @@ A preparação dos dados foi uma etapa central, pois o dataset apresenta valores
 
 O uso de `Pipeline` e `ColumnTransformer` tornou o fluxo mais organizado, reproduzível e seguro contra data leakage.
 
-## 11. Como executar
+## Como executar o projeto
 
-1. Instale as dependências:
+Este projeto pode ser executado de duas formas: diretamente no Google Colab ou localmente em sua máquina.
 
+### Opção 1: Executar pelo Google Colab
+
+A forma mais simples de executar o projeto é pelo Google Colab, sem necessidade de instalação local.
+
+Acesse o notebook pelo link abaixo:
+
+[Visualizar e executar no Google Colab](https://colab.research.google.com/drive/14RkxwwBu62DeCD9EUThGfCWsb0n7SytA?usp=sharing)
+
+Após abrir o notebook:
+
+1. Clique em Arquivo > Salvar uma cópia no Drive, caso queira editar.
+2. Execute as células em ordem.
+3. Caso necessário, faça o upload do dataset no ambiente do Colab ou ajuste o caminho do arquivo CSV conforme indicado no notebook.
+
+### Opção 2: Executar localmente
+
+Para executar o projeto em sua máquina, siga os passos abaixo.
+
+1. Clone este repositório:
+```bash
+git clone https://github.com/EnricoAoyama/fatec_intcomp_prjfinal
+```
+
+2. Acesse a pasta do projeto:
+```bash
+cd <NOME_DA_PASTA_DO_REPOSITORIO>
+```
+
+3. Instale as dependências:
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Abra o notebook:
-
+4. Abra o notebook:
 ```bash
 jupyter notebook IntComp_Atividade_Final_Global_Power_Plant.ipynb
 ```
 
-3. Execute as células em ordem.
+5.Execute as células em ordem.
+
+Observação: certifique-se de que o arquivo CSV do dataset esteja disponível na pasta correta ou ajuste o caminho do arquivo no notebook.
