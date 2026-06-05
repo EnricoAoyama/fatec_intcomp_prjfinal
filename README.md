@@ -3,8 +3,6 @@
 
 Este repositório contém o desenvolvimento da atividade avaliativa final da disciplina de **Inteligência Computacional**, utilizando o dataset **Global Power Plant Database**, disponível no Kaggle.
 
-Link do dataset: <https://www.kaggle.com/datasets/ranafayezz/global-power-plant>
-
 ## Problema escolhido
 
 O problema escolhido foi de **regressão supervisionada**.
@@ -12,6 +10,7 @@ O problema escolhido foi de **regressão supervisionada**.
 O objetivo é prever a capacidade instalada de uma usina elétrica, em megawatts (`capacity_mw`), com base em atributos como país, localização geográfica, fonte primária de energia, proprietário, ano de comissionamento e demais informações disponíveis no dataset.
 
 ## 2. Dataset
+Link do dataset: <https://www.kaggle.com/datasets/ranafayezz/global-power-plant>
 
 O dataset contém informações globais sobre usinas elétricas, incluindo:
 
@@ -33,6 +32,19 @@ O dataset atende aos requisitos da atividade pois possui:
 - variáveis numéricas;
 - valores ausentes;
 - necessidade de transformação e pré-processamento.
+
+## Como executar o projeto
+
+A forma mais simples de executar o projeto é pelo Google Colab, sem necessidade de instalação local.
+
+Acesse o notebook pelo link abaixo:
+[Visualizar e executar no Google Colab](https://colab.research.google.com/drive/14RkxwwBu62DeCD9EUThGfCWsb0n7SytA?usp=sharing)
+
+Após abrir o notebook:
+
+1. Clique em Arquivo > Salvar uma cópia no Drive, caso queira editar.
+2. Execute as células em ordem.
+3. Caso necessário, faça o upload do dataset no ambiente do Colab ou ajuste o caminho do arquivo CSV conforme indicado no notebook.
 
 ## Solução desenvolvida
 
@@ -63,29 +75,29 @@ O notebook contempla:
 - otimização com `GridSearchCV`;
 - avaliação com métricas de regressão.
 
-## Engenharia de atributos
+### Engenharia de atributos
 
 Foram criados atributos derivados dos dados originais:
 
-### `is_renewable`
+#### `is_renewable`
 
 Indica se a fonte primária da usina é renovável ou não.
 
 Essa variável ajuda o modelo a capturar diferenças estruturais entre fontes como solar, eólica, hidrelétrica, carvão, gás e óleo.
 
-### `plant_age`
+#### `plant_age`
 
 Representa a idade aproximada da usina, calculada a partir do ano de comissionamento.
 
 Essa variável pode ajudar porque usinas mais antigas e mais novas podem apresentar padrões diferentes de capacidade instalada.
 
-### `capacity_category`
+#### `capacity_category`
 
 Classifica a usina em categorias de porte, como pequena, média, grande e muito grande.
 
 Essa variável foi utilizada apenas na análise exploratória, pois é derivada diretamente da variável alvo `capacity_mw`. Portanto, ela não foi usada como preditora no modelo para evitar data leakage.
 
-## Prevenção de Data Leakage
+### Prevenção de Data Leakage
 
 Data leakage ocorre quando informações que não estariam disponíveis no momento da previsão são usadas durante o treinamento do modelo.
 
@@ -96,7 +108,7 @@ Para evitar esse problema:
 - colunas relacionadas à geração de energia foram removidas, pois podem estar diretamente associadas à capacidade instalada;
 - o pré-processamento foi feito dentro de um `Pipeline`, evitando que imputação, escalonamento ou codificação fossem ajustados usando dados de teste.
 
-## Modelo utilizado
+### Modelo utilizado
 Foi utilizado o algoritmo `KNeighborsRegressor`.
 
 O KNN para regressão prevê um valor com base nas observações mais próximas no conjunto de treino.
@@ -107,7 +119,7 @@ Foram testados os seguintes hiperparâmetros com `GridSearchCV`:
 - `weights`: ponderação uniforme ou por distância;
 - `p`: métrica de distância, Manhattan ou Euclidiana.
 
-## Métricas de avaliação
+### Métricas de avaliação
 
 Como o problema é de regressão, foram utilizadas métricas adequadas a esse tipo de problema:
 
@@ -147,49 +159,3 @@ O projeto construiu um fluxo completo de Ciência de Dados aplicado a um problem
 A preparação dos dados foi uma etapa central, pois o dataset apresenta valores ausentes, categóricas, outliers e variáveis com escalas diferentes.
 
 O uso de `Pipeline` e `ColumnTransformer` tornou o fluxo mais organizado, reproduzível e seguro contra data leakage.
-
-## Como executar o projeto
-
-Este projeto pode ser executado de duas formas: diretamente no Google Colab ou localmente em sua máquina.
-
-### Opção 1: Executar pelo Google Colab
-
-A forma mais simples de executar o projeto é pelo Google Colab, sem necessidade de instalação local.
-
-Acesse o notebook pelo link abaixo:
-
-[Visualizar e executar no Google Colab](https://colab.research.google.com/drive/14RkxwwBu62DeCD9EUThGfCWsb0n7SytA?usp=sharing)
-
-Após abrir o notebook:
-
-1. Clique em Arquivo > Salvar uma cópia no Drive, caso queira editar.
-2. Execute as células em ordem.
-3. Caso necessário, faça o upload do dataset no ambiente do Colab ou ajuste o caminho do arquivo CSV conforme indicado no notebook.
-
-### Opção 2: Executar localmente
-
-Para executar o projeto em sua máquina, siga os passos abaixo.
-
-1. Clone este repositório:
-```bash
-git clone https://github.com/EnricoAoyama/fatec_intcomp_prjfinal
-```
-
-2. Acesse a pasta do projeto:
-```bash
-cd <NOME_DA_PASTA_DO_REPOSITORIO>
-```
-
-3. Instale as dependências:
-```bash
-pip install -r requirements.txt
-```
-
-4. Abra o notebook:
-```bash
-jupyter notebook IntComp_Atividade_Final_Global_Power_Plant.ipynb
-```
-
-5.Execute as células em ordem.
-
-Observação: certifique-se de que o arquivo CSV do dataset esteja disponível na pasta correta ou ajuste o caminho do arquivo no notebook.
