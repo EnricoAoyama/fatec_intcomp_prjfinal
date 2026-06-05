@@ -26,15 +26,13 @@ O dataset contém informações globais sobre usinas elétricas, incluindo:
 - fonte dos dados;
 - informações de geração de energia.
 
-O dataset atende aos requisitos da atividade porque possui:
+O dataset atende aos requisitos da atividade pois possui:
 
 - mais de 500 registros;
 - variáveis categóricas;
 - variáveis numéricas;
 - valores ausentes;
 - necessidade de transformação e pré-processamento.
-
-Atende aos requisitos de registros (>500) contendo variáveis categóricas, valores ausentes _ou_ necessidade de transformação de dados.
 
 ## Solução desenvolvida
 
